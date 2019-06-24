@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>@projectName</title>
+    <meta charset="utf-8">
+
+    <style type="text/css">
+        h1 {
+            margin-bottom: 50px;
+        }
+
+        img {
+            width: 40%;
+        }
+
+        .img-ctn {
+            padding-left: 20px;
+            margin-top: 30px;
+            border-left: 5px solid #000;
+        }
+
+        #bgColorInputCtn {
+            position: fixed;
+            top: 0;
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>@projectName</h1>
+
+    @icons
+
+    <div id="bgColorInputCtn">
+        <input type="color" id="bgColorInput" name="head" value="#ffffff">
+        <label for="bgColorInput">Change backgroundColor</label>
+    </div>
+
+    <script>
+        document.getElementById("bgColorInput").addEventListener("change", updateBgColor, false);
+
+        function updateBgColor(event) {
+            document.body.style.backgroundColor = event.target.value;
+        }
+    </script>
+</body>
+
+</html>
