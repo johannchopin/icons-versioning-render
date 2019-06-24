@@ -1,3 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    transition-duration: 1s;
+}
+
 h1 {
     margin-bottom: 50px;
 }
@@ -9,6 +18,7 @@ img {
 .img-ctn {
     padding-left: 20px;
     margin-top: 30px;
+    margin-left: 20px;
     border-left: 5px solid #000;
 }
 
@@ -16,4 +26,340 @@ img {
     position: fixed;
     top: 0;
     right: 0;
+    cursor: pointer;
+}
+
+#bgColorInputCtn label {
+    cursor: pointer;
+}
+
+
+
+
+
+/* === COLOR PALETTE === */
+
+.lj-container {
+    display: inline-block;
+}
+
+
+.lj-colorBox {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 4px;
+    margin: 0.5px;
+}
+
+.u-fill--silverSand {
+    background-color: #BEC2C5;
+}
+
+.u-fill--puertoRico {
+    background-color: #3BBCB0;
+}
+
+.u-fill--tuftsBlue {
+    background-color: #3877BA;
+}
+
+.u-fill--ripePlum {
+    background-color: #992E80;
+}
+
+.u-fill--flamingo {
+    background-color: #EE483E;
+}
+
+.u-fill--jaffa {
+    background-color: #F3873C;
+}
+
+.u-fill--starship {
+    background-color: #EDE540;
+}
+
+.u-fill--fern {
+    background-color: #5CB85C;
+}
+
+.u-fill--linkedinBlue {
+    background-color: #0077B5;
+}
+
+.u-fill--githubGray {
+    background-color: #333333;
+}
+
+.u-fill--facebookBlue {
+    background-color: #3B5998;
+}
+
+.u-fill--twitterBlue {
+    background-color: #1DA1F2;
+}
+
+.u-fill--skypeBlue {
+    background-color: #12A5F4;
+}
+
+.u-fill--silverSand.is-xLight {
+    background-color: #F4F5F6;
+}
+
+.u-fill--silverSand.is-light {
+    background-color: #E9EBEC;
+}
+
+.u-fill--silverSand.is-midLight {
+    background-color: #D4D7D8;
+}
+
+.u-fill--silverSand.is-midDark {
+    background-color: #93999E;
+}
+
+.u-fill--silverSand.is-dark {
+    background-color: #677077;
+}
+
+.u-fill--silverSand.is-xDark {
+    background-color: #3C4750;
+}
+
+.u-fill--silverSand.is-xxDark {
+    background-color: #26333C;
+}
+
+.u-fill--puertoRico.is-xLight {
+    background-color: #EAF8F7;
+}
+
+.u-fill--puertoRico.is-light {
+    background-color: #9FE1DB;
+}
+
+.u-fill--puertoRico.is-midLight {
+    background-color: #73D3CA;
+}
+
+.u-fill--puertoRico.is-midDark {
+    background-color: #329E94;
+}
+
+.u-fill--puertoRico.is-dark {
+    background-color: #288078;
+}
+
+.u-fill--puertoRico.is-xDark {
+    background-color: #1F625C;
+}
+
+.u-fill--tuftsBlue.is-xLight {
+    background-color: #E1EEFC;
+}
+
+.u-fill--tuftsBlue.is-light {
+    background-color: #77B1F0;
+}
+
+.u-fill--tuftsBlue.is-midLight {
+    background-color: #4293EA;
+}
+
+.u-fill--tuftsBlue.is-midDark {
+    background-color: #2F649C;
+}
+
+.u-fill--tuftsBlue.is-dark {
+    background-color: #26507E;
+}
+
+.u-fill--tuftsBlue.is-xDark {
+    background-color: #1D3D60;
+}
+
+.u-fill--ripePlum.is-xLight {
+    background-color: #F7E3F2;
+}
+
+.u-fill--ripePlum.is-light {
+    background-color: #DB89C8;
+}
+
+.u-fill--ripePlum.is-midLight {
+    background-color: #C94CAC;
+}
+
+.u-fill--ripePlum.is-midDark {
+    background-color: #7B2567;
+}
+
+.u-fill--ripePlum.is-dark {
+    background-color: #5D1C4E;
+}
+
+.u-fill--ripePlum.is-xDark {
+    background-color: #3F1334;
+}
+
+.u-fill--flamingo.is-xLight {
+    background-color: #FEF3F2;
+}
+
+.u-fill--flamingo.is-light {
+    background-color: #F9C0BC;
+}
+
+.u-fill--flamingo.is-midLight {
+    background-color: #F48C86;
+}
+
+.u-fill--flamingo.is-midDark {
+    background-color: #DE1F14;
+}
+
+.u-fill--flamingo.is-dark {
+    background-color: #BA1A10;
+}
+
+.u-fill--flamingo.is-xDark {
+    background-color: #96150D;
+}
+
+.u-fill--jaffa.is-xLight {
+    background-color: #FEF9F5;
+}
+
+.u-fill--jaffa.is-light {
+    background-color: #FBD7BD;
+}
+
+.u-fill--jaffa.is-midLight {
+    background-color: #F8B486;
+}
+
+.u-fill--jaffa.is-midDark {
+    background-color: #E6670E;
+}
+
+.u-fill--jaffa.is-dark {
+    background-color: #C1560C;
+}
+
+.u-fill--jaffa.is-xDark {
+    background-color: #9C460A;
+}
+
+.u-fill--starship.is-xLight {
+    background-color: #FEFDF3;
+}
+
+.u-fill--starship.is-light {
+    background-color: #F9F6BD;
+}
+
+.u-fill--starship.is-midLight {
+    background-color: #F4EF88;
+}
+
+.u-fill--starship.is-midDark {
+    background-color: #DDD415;
+}
+
+.u-fill--starship.is-dark {
+    background-color: #B9B211;
+}
+
+.u-fill--starship.is-xDark {
+    background-color: #968F0E;
+}
+
+.u-fill--fern.is-midDark {
+    background-color: #3F7F3F;
+}
+
+.u-fill--linkedinBlue.is-light {
+    background-color: #2CB7FF;
+}
+
+.u-fill--linkedinBlue.is-midLight {
+    background-color: #009EF0;
+}
+
+.u-fill--linkedinBlue.is-midDark {
+    background-color: #005D8E;
+}
+
+.u-fill--linkedinBlue.is-dark {
+    background-color: #004367;
+}
+
+.u-fill--githubGray.is-light {
+    background-color: #5A5A5A;
+}
+
+.u-fill--githubGray.is-midLight {
+    background-color: #474747;
+}
+
+.u-fill--githubGray.is-midDark {
+    background-color: #1F1F1F;
+}
+
+.u-fill--githubGray.is-dark {
+    background-color: #0C0C0C;
+}
+
+.u-fill--facebookBlue.is-light {
+    background-color: #607FC1;
+}
+
+.u-fill--facebookBlue.is-midLight {
+    background-color: #466AB4;
+}
+
+.u-fill--facebookBlue.is-midDark {
+    background-color: #30487C;
+}
+
+.u-fill--facebookBlue.is-dark {
+    background-color: #25385F;
+}
+
+.u-fill--twitterBlue.is-light {
+    background-color: #67C0F6;
+}
+
+.u-fill--twitterBlue.is-midLight {
+    background-color: #42B0F4;
+}
+
+.u-fill--twitterBlue.is-midDark {
+    background-color: #0D8DDB;
+}
+
+.u-fill--twitterBlue.is-dark {
+    background-color: #0A75B6;
+}
+
+.u-fill--skypeBlue.is-light {
+    background-color: #70C9F8;
+}
+
+.u-fill--skypeBlue.is-midLight {
+    background-color: #37B3F6;
+}
+
+.u-fill--skypeBlue.is-midDark {
+    background-color: #0A8ED5;
+}
+
+.u-fill--skypeBlue.is-dark {
+    background-color: #0875AF;
+}
+
+.u-textColor--silverSand {
+    color: #BEC2C5;
 }

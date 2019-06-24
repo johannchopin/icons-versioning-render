@@ -5,14 +5,14 @@ class IconsVersioningRender
     protected $localPath;
     protected $projectParams;
 
-    public function __construct(string $absolutPathToProject, string $pathToIconsFolder = "/icons")
+    public function __construct(string $absolutPathToProject)
     {
         $this->localPath = dirname(__FILE__);
 
         $this->projectParams["absolutPathToProject"] = $absolutPathToProject;
         $this->projectParams["projectName"] = "";
         $this->projectParams["customCssFiles"] = [];
-        $this->projectParams["pathToIconsFolder"] = $pathToIconsFolder;
+        $this->projectParams["pathToIconsFolder"] = "/icons";
     }
 
     public function render()
@@ -28,6 +28,11 @@ class IconsVersioningRender
     public function addCustomCss(array $customCssFiles)
     {
         $this->projectParams["customCssFiles"] = $customCssFiles;
+    }
+
+    public function setIconsFolderPath(string $iconsFolderPath)
+    {
+        $this->projectParams["pathToIconsFolder"] = $iconsFolderPath;
     }
 
     protected function getProjectParams()
@@ -47,10 +52,11 @@ class IconsVersioningRender
     {
         $pageStructure = $this->getPageStructure();
 
-        $pageStructure = str_replace("@icons", $this->iconsRender(), $pageStructure);
+        $pageStructure = str_replace("@projectName", $this->projectParams["projectName"], $pageStructure);
         $pageStructure = str_replace("@defaultCss", $this->getHTMLDefaultCss(), $pageStructure);
         $pageStructure = str_replace("@customCss", $this->getHTMLCustomCssFiles(), $pageStructure);
-        $pageStructure = str_replace("@projectName", $this->projectParams["projectName"], $pageStructure);
+        $pageStructure = str_replace("@icons", $this->iconsRender(), $pageStructure);
+        $pageStructure = str_replace("@defaultJs", $this->getHTMLDefaultJs(), $pageStructure);
 
         return $pageStructure;
     }
@@ -96,6 +102,12 @@ class IconsVersioningRender
         return "<style type=\"text/css\">" . $defaultCss . "</style>";
     }
 
+    protected function getHTMLDefaultJs()
+    {
+        $defaultJs = file_get_contents($this->localPath . "/src/default.js");
+
+        return "<script>" . $defaultJs . "</script>";
+    }
 
     protected function renderPage()
     {
