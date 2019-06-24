@@ -11,9 +11,23 @@ class IconsVersioningRender
 
         $this->projectParams["absolutPathToProject"] = $absolutPathToProject;
         $this->projectParams["projectName"] = "";
+        $this->projectParams["customCssFiles"] = [];
         $this->projectParams["pathToIconsFolder"] = $pathToIconsFolder;
+    }
 
+    public function render()
+    {
         $this->renderPage();
+    }
+
+    public function addProjectName(string $projectName)
+    {
+        $this->projectParams["projectName"] = $projectName;
+    }
+
+    public function addCustomCss(array $customCssFiles)
+    {
+        $this->projectParams["customCssFiles"] = $customCssFiles;
     }
 
     protected function getProjectParams()
@@ -34,6 +48,8 @@ class IconsVersioningRender
         $pageStructure = $this->getPageStructure();
 
         $pageStructure = str_replace("@icons", $this->iconsRender(), $pageStructure);
+        $pageStructure = str_replace("@defaultCss", $this->getHTMLDefaultCss(), $pageStructure);
+        $pageStructure = str_replace("@customCss", $this->getHTMLCustomCssFiles(), $pageStructure);
         $pageStructure = str_replace("@projectName", $this->projectParams["projectName"], $pageStructure);
 
         return $pageStructure;
@@ -61,6 +77,25 @@ class IconsVersioningRender
     {
         return file_get_contents($this->localPath . "/src/pageStructure.html");
     }
+
+    protected function getHTMLCustomCssFiles()
+    {
+        $HTMLCustomCssFiles = "";
+
+        foreach ($this->projectParams["customCssFiles"] as $cssFileName) {
+            $HTMLCustomCssFiles .= "<link rel=\"stylesheet\" type=\"text/css\" href=\"" . $cssFileName . "\">";
+        }
+
+        return $HTMLCustomCssFiles;
+    }
+
+    protected function getHTMLDefaultCss()
+    {
+        $defaultCss = file_get_contents($this->localPath . "/src/default.css");
+
+        return "<style type=\"text/css\">" . $defaultCss . "</style>";
+    }
+
 
     protected function renderPage()
     {
